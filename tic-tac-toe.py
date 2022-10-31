@@ -54,19 +54,16 @@ def move(field, flag, npc=False):
 
 def game_loop(npc=False):
     field = [['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']]
-    flag = 'x'
     show(field)
-    for step in range(9):
+    for flag in 'x0x0x0x0x':
         if flag == 'x':
             if move(field, flag):
                 start(first=False)
                 break
-            flag = '0'
         else:
             if move(field, flag, npc):
                 start(first=False)
                 break
-            flag = 'x'
         continue
     else:
         start(first=False)
